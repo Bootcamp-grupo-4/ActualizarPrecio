@@ -1,4 +1,4 @@
-package com.capgeticket.actualizarprecios.Actualizar.precios;
+package com.capgeticket.actualizarprecios;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
