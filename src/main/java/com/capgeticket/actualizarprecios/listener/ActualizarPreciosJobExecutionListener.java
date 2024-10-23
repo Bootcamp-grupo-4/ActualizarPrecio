@@ -12,11 +12,23 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class ActualizarPreciosJobExecutionListener implements JobExecutionListener {
 
+    /**
+     * Método que se ejecuta antes de que el Job inicie.
+     * Registra un log indicando el inicio del job con su ID.
+     *
+     * @param jobExecution la ejecución del job actual.
+     */
     @Override
     public void beforeJob(JobExecution jobExecution) {
         log.info("--- Starting job to update event prices with id {}", jobExecution.getId());
     }
 
+    /**
+     * Método que se ejecuta después de que el Job haya terminado.
+     * Registra un log con el estado de finalización del job, indicando si fue exitoso o fallido.
+     *
+     * @param jobExecution la ejecución del job actual.
+     */
     @Override
     public void afterJob(JobExecution jobExecution) {
         if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
